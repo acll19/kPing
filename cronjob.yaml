@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: kping
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ping-no-delay
+            image: dolphm/network-tools
+            command:
+            - /bin/sh
+            - -c
+            - curl https://www.google.com
+          - name: ping-30-sec-delay
+            image: dolphm/network-tools
+            command:
+            - /bin/sh
+            - -c
+            - sleep 30; curl https://www.google.com
+          restartPolicy: Never
