@@ -2,6 +2,12 @@
 
 A simple Kubernetes cronjob that pings cURLs an endpoint periodically (every 30 seconds by default)
 
+## Requirements
+
+- Linux (tested on Ubuntu 22.04)
+- [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/) v0.20.0 go1.20.4 linux/amd64
+- [Docker](https://www.docker.com/) version 24.0.7, build afdd53b
+
 ## Setup
 
 Run the following script
